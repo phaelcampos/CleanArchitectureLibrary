@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: library
+
+    datasource:
+      url: ${SPRING_DATASOURCE_URL}
+      driver-class-name: org.postgresql.Driver
+      username: ${SPRING_DATASOURCE_USERNAME}
+      password: ${SPRING_DATASOURCE_PASSWORD}
+
+
+    jpa:
+      show-sql: true
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+    flyway:
+      enabled: true
