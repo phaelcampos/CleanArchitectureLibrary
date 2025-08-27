@@ -1,11 +1,20 @@
 package dev.raphael.library.library.core.usecases;
 
 import dev.raphael.library.library.core.entities.Books;
+import dev.raphael.library.library.core.gateway.BooksGateway;
+
+import java.util.List;
 
 public class SearchBookCaseImpl implements SearchBookCase {
 
+    private final BooksGateway booksGateway;
+
+    public SearchBookCaseImpl(BooksGateway booksGateway) {
+        this.booksGateway = booksGateway;
+    }
+
     @Override
-    public Books execute(Books books) {
-        return books;
+    public List<Books> execute() {
+        return booksGateway.getBooks();
     }
 }

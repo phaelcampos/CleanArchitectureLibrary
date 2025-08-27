@@ -5,7 +5,7 @@ import dev.raphael.library.library.core.enums.Genres;
 import java.time.LocalDate;
 
 public record Books(
-        String id,
+        Long id,
 
         String title,
 
