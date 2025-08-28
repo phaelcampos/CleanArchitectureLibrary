@@ -1,10 +1,7 @@
 package dev.raphael.library.library.infra.beans;
 
 import dev.raphael.library.library.core.gateway.BooksGateway;
-import dev.raphael.library.library.core.usecases.AddBookCase;
-import dev.raphael.library.library.core.usecases.AddBookCaseImpl;
-import dev.raphael.library.library.core.usecases.SearchBookCase;
-import dev.raphael.library.library.core.usecases.SearchBookCaseImpl;
+import dev.raphael.library.library.core.usecases.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,12 +10,15 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public AddBookCase addBook(BooksGateway booksGateway){
-        return new AddBookCaseImpl(booksGateway);
+    public AddBookUseCase addBook(BooksGateway booksGateway){
+        return new AddBookUseCaseImpl(booksGateway);
     }
 
     @Bean
-    public SearchBookCase searchBook(BooksGateway booksGateway){
-        return new SearchBookCaseImpl(booksGateway);
+    public SearchBookUseCase searchBook(BooksGateway booksGateway){
+        return new SearchBookUseCaseImpl(booksGateway);
     }
+
+    @Bean
+    public SearchBookByIdUseCase searchBookById(BooksGateway booksGateway){return new SearchBookByIdUseCaseImpl(booksGateway);}
 }

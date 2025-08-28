@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.awt.print.Book;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class BooksRepositoryGateway implements BooksGateway {
@@ -34,6 +35,12 @@ public class BooksRepositoryGateway implements BooksGateway {
         return bookEntities.stream()
                 .map(booksEnitityMapper::toDomain)
                 .toList();
+    }
+
+    @Override
+    public Optional<Books> getBookById(Long id) {
+        Optional<BookEntity> book = bookRepository.findById(id);
+        return book.map(booksEnitityMapper::toDomain);
     }
 
 

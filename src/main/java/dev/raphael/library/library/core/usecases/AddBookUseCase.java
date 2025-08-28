@@ -2,9 +2,8 @@ package dev.raphael.library.library.core.usecases;
 
 import dev.raphael.library.library.core.entities.Books;
 
-import java.util.List;
+public interface AddBookUseCase {
 
-public interface SearchBookCase {
+    public Books execute(Books books);
 
-    public List<Books> execute();
 }
