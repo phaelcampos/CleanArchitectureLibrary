@@ -2,6 +2,7 @@ package dev.raphael.library.library.infra.gateway;
 
 import dev.raphael.library.library.core.entities.Books;
 import dev.raphael.library.library.core.gateway.BooksGateway;
+import dev.raphael.library.library.infra.exceptions.BusinessException;
 import dev.raphael.library.library.infra.mappers.BooksEnitityMapper;
 import dev.raphael.library.library.infra.mappers.BooksMapper;
 import dev.raphael.library.library.infra.persistence.BookEntity;
@@ -43,5 +44,10 @@ public class BooksRepositoryGateway implements BooksGateway {
         return book.map(booksEnitityMapper::toDomain);
     }
 
-
+    @Override
+    public Optional<Books> checkIfIsbnAlreadyExists(String isbn) {
+        Optional<BookEntity> book = bookRepository.findBookEntitiesByIsbn(isbn);
+        return book.map(booksEnitityMapper::toDomain);
+    }
+    
 }

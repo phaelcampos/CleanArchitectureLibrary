@@ -12,4 +12,6 @@ public interface BooksGateway {
     List<Books> getBooks();
 
     Optional<Books> getBookById(Long id);
+
+    Optional<Books> checkIfIsbnAlreadyExists(String title);
 }

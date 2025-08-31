@@ -21,4 +21,7 @@ public class BeanConfiguration {
 
     @Bean
     public SearchBookByIdUseCase searchBookById(BooksGateway booksGateway){return new SearchBookByIdUseCaseImpl(booksGateway);}
+
+    @Bean
+    public CheckIfIsbnAlreadyExistsUseCase checkIfIsbnAlreadyExists(BooksGateway booksGateway){return new  CheckIfIsbnAlreadyExistsUseCaseImpl(booksGateway);}
 }
