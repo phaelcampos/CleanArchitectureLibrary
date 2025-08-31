@@ -6,7 +6,7 @@ import dev.raphael.library.library.infra.dtos.BooksDtoRequest;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BooksMapper {
+public class BooksDomainMapper {
 
     public Books toDomain(BooksDtoRequest booksDto) {
             return new Books(

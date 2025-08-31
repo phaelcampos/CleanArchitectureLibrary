@@ -1,13 +1,13 @@
 package dev.raphael.library.library.infra.beans;
 
 import dev.raphael.library.library.core.gateway.BooksGateway;
-import dev.raphael.library.library.core.usecases.*;
+import dev.raphael.library.library.core.usecases.booksUseCases.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 
-public class BeanConfiguration {
+public class BooksBeanConfiguration {
 
     @Bean
     public AddBookUseCase addBook(BooksGateway booksGateway){
@@ -23,5 +23,5 @@ public class BeanConfiguration {
     public SearchBookByIdUseCase searchBookById(BooksGateway booksGateway){return new SearchBookByIdUseCaseImpl(booksGateway);}
 
     @Bean
-    public CheckIfIsbnAlreadyExistsUseCase checkIfIsbnAlreadyExists(BooksGateway booksGateway){return new  CheckIfIsbnAlreadyExistsUseCaseImpl(booksGateway);}
+    public CheckIfIsbnAlreadyExistsUseCase checkIfIsbnAlreadyExists(BooksGateway booksGateway){return new CheckIfIsbnAlreadyExistsUseCaseImpl(booksGateway);}
 }

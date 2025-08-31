@@ -16,3 +16,8 @@ spring:
     flyway:
       enabled: true
       locations: classpath:db/migration
+
+library:
+  security:
+    secret: "palavra-super-secreta-melhor-usar-como-]ambient-var"
+

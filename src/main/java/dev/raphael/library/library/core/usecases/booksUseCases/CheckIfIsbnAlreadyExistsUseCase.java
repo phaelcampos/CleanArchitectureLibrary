@@ -1,4 +1,4 @@
-package dev.raphael.library.library.core.usecases;
+package dev.raphael.library.library.core.usecases.booksUseCases;
 
 import dev.raphael.library.library.core.entities.Books;
 

@@ -2,14 +2,11 @@ package dev.raphael.library.library.infra.gateway;
 
 import dev.raphael.library.library.core.entities.Books;
 import dev.raphael.library.library.core.gateway.BooksGateway;
-import dev.raphael.library.library.infra.exceptions.BusinessException;
 import dev.raphael.library.library.infra.mappers.BooksEnitityMapper;
-import dev.raphael.library.library.infra.mappers.BooksMapper;
 import dev.raphael.library.library.infra.persistence.BookEntity;
 import dev.raphael.library.library.infra.persistence.BookRepository;
 import org.springframework.stereotype.Component;
 
-import java.awt.print.Book;
 import java.util.List;
 import java.util.Optional;
 
